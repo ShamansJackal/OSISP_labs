@@ -7,14 +7,13 @@ ulong ProduceString(char *str)
     int len = strlen(str);
     ulong sum = 0;
 
-    for (int i = 0; i < len; i++)
+    for (int i = 0; i < len; i+=2)
     {
         u_char symb = str[i];
         u_char symb2 = str[(1+i)];
 
         uint tmp = (symb<<8)+symb2;
         sum += tmp*tmp;
-        i++;
         printf("%x\n", tmp); 
     }
 
